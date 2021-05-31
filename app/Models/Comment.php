@@ -38,8 +38,11 @@ class Comment extends Model
     {
         if($this->status == 0)
         {
-            return $this->allow();
+            $this->allow();
         }
-        return $this->disAllow();
+        else
+        {
+            $this->disAllow();
+        }
     }
 }

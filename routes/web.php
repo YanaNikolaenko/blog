@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', [CategoriesController::class, 'index'])->name('admin.index');
+
+Route::get('/admin/categories/create', 'App\Http\Controllers\Admin\CategoriesController@create')->name('admin.categories.create');
+Route::post('/admin/categories/store', 'App\Http\Controllers\Admin\CategoriesController@store')->name('admin.categories.store');
+
+
+
+//Route::resource('/admin/categories', 'App\Http\Controllers\Admin\CategoriesController');

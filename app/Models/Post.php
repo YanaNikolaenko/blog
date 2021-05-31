@@ -125,21 +125,27 @@ class Post extends Model
         $this->save();
     }
 
+
     public function toggleStatus($value)
     {
         if ($value == null)
         {
-            return $this->setDraft();
+            $this->setDraft();
         }
-        return $this->setPublic();
+        else {
+            $this->setPublic();
+        }
     }
 
     public function toggleFeatured($value)
     {
         if ($value == null)
         {
-            return $this->setStandart();
+            $this->setStandart();
         }
-        return $this->setFeatured();
+        else
+        {
+            $this->setFeatured();
+        }
     }
 }

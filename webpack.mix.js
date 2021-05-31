@@ -12,18 +12,32 @@ const mix = require('laravel-mix');
  */
 
 mix.styles([
-    'resources/admin/bootstrap/css/bootstrap.min.css',
-    'resources/admin/font-awesome/4.5.0/css/font-awesome.min.css',
-    'resources/admin/ionicons/2.0.1/css/ionicons.min.css',
-    'resources/admin/dist/css/AdminLTE.min.css',
-    'resources/admin/dist/css/skins/_all-skins.min.css'
+    'resources/assets/admin/bootstrap/css/bootstrap.min.css',
+    'resources/assets/admin/font-awesome/4.5.0/css/font-awesome.min.css',
+    'resources/assets/admin/ionicons/2.0.1/css/ionicons.min.css',
+    'resources/assets/admin/dist/css/AdminLTE.min.css',
+    'resources/assets/admin/dist/css/skins/_all-skins.min.css',
+    'resources/assets/admin/plugins/datatables/dataTables.bootstrap.css',
+    'resources/assets/admin/plugins/iCheck/all.css',
+    'resources/assets/admin/plugins/datepicker/datepicker3.css',
+    'resources/assets/admin/plugins/select2/select2.min.css'
 ], 'public/css/admin.css');
 
 mix.js([
-    'resources/admin/plugins/jQuery/jquery-2.2.3.min.js',
-    'resources/admin/bootstrap/js/bootstrap.min.js',
-    'resources/admin/plugins/slimScroll/jquery.slimscroll.min.js',
-    'resources/admin/plugins/fastclick/fastclick.js',
-    'resources/admin/dist/js/app.min.js',
-    'resources/admin/dist/js/demo.js'
+    'resources/assets/admin/plugins/jQuery/jquery-2.2.3.min.js',
+    'resources/assets/admin/bootstrap/js/bootstrap.min.js',
+    'resources/assets/admin/plugins/slimScroll/jquery.slimscroll.min.js',
+    'resources/assets/admin/plugins/fastclick/fastclick.js',
+    'resources/assets/admin/dist/js/app.min.js',
+    'resources/assets/admin/dist/js/demo.js',
+    'resources/assets/admin/plugins/datepicker/bootstrap-datepicker.js',
+    'resources/assets/admin/plugins/iCheck/icheck.min.js',
+
+    'resources/assets/admin/dist/js/scripts.js'
 ], 'public/js/admin.js');
+
+mix.copy('resources/assets/admin/bootstrap/fonts', 'public/fonts');
+
+mix.copy('resources/assets/admin/dist/fonts', 'public/fonts');
+
+mix.copy('resources/assets/admin/dist/img', 'public/img');
